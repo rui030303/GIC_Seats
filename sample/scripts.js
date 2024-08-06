@@ -183,7 +183,7 @@ function updateRectColors() {
 
 
 // Update rect colors every 10 seconds
-setInterval(updateRectColors, 2000);
+setInterval(updateRectColors, 10000);
 
 
 // Thats it!
