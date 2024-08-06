@@ -14,13 +14,19 @@
             <!-- Define the glow effect -->
             <defs>
                 <filter id="glow" width="200%" height="200%" x="-50%" y="-50%">
-                    <feGaussianBlur stdDeviation="20" result="coloredBlur"/>
-                    <feMerge>
-                        <feMergeNode in="coloredBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
+                  <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
                 </filter>
-            </defs>
+                <mask id="rect-mask" x="0" y="0" width="100%" height="100%">
+                  <rect x="0" y="0" width="100%" height="100%" fill="white"/>
+                </mask>
+              </defs>
+              
             
         </svg>
         <img id="background-image" src="seats.png" alt="">

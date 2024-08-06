@@ -78,15 +78,15 @@ const numberPositions = [
   {id: 'rect56', coords: "1624,559,1654,584"},
   {id: 'rect57', coords: "1672,559,1702,584"},
 
-  {id: 'rect61', coords: "759,664,792,685"},
-  {id: 'rect62', coords: "758,710,792,734"},
-  {id: 'rect63', coords: "728,665,759,685"},
-  {id: 'rect64', coords: "728,710,758,734"},
+  {id: 'rect61', coords: "759,664,792,687"},
+  {id: 'rect62', coords: "758,710,792,735"},
+  {id: 'rect63', coords: "728,665,759,687"},
+  {id: 'rect64', coords: "728,710,758,735"},
 
   {id: 'rect65', coords: "633,674,663,696"},
-  {id: 'rect66', coords: "625,711,655,734"},
-  {id: 'rect67', coords: "602,674,632,696"},
-  {id: 'rect68', coords: "595,711,625,734"},
+  {id: 'rect66', coords: "625,711,655,735"},
+  {id: 'rect67', coords: "601,674,632,696"},
+  {id: 'rect68', coords: "592,711,623,735"},
 
   {id: 'rect71', coords: "584,570,615,593"},
   {id: 'rect72', coords: "591,532,623,555"},
@@ -100,11 +100,11 @@ const numberPositions = [
   {id: 'rect79', coords: "575,456,607,479"},
   {id: 'rect80', coords: "583,418,614,441"},
   
-  {id: 'rect81', coords: "270,409,301,434"},
-  {id: 'rect82', coords: "311,409,341,434"},
-  {id: 'rect83', coords: "360,409,392,434"},
-  {id: 'rect84', coords: "399,409,430,434"},
-  {id: 'rect85', coords: "448,409,480,434"},
+  {id: 'rect81', coords: "270,408,301,434"},
+  {id: 'rect82', coords: "311,408,341,434"},
+  {id: 'rect83', coords: "360,408,392,434"},
+  {id: 'rect84', coords: "399,408,430,434"},
+  {id: 'rect85', coords: "448,408,480,434"},
 
   {id: 'rect91', coords: "192,733,223,754"},
   {id: 'rect92', coords: "240,733,269,754"},
@@ -112,11 +112,11 @@ const numberPositions = [
   {id: 'rect94', coords: "336,733,367,754"},
   {id: 'rect95', coords: "382,733,413,754"},
 
-  {id: 'rect96', coords: "390,703,421,724"},
-  {id: 'rect97', coords: "344,703,375,724"},
-  {id: 'rect98', coords: "295,703,326,724"},
-  {id: 'rect99', coords: "248,703,277,724"},
-  {id: 'rect100', coords: "200,703,231,724"},
+  {id: 'rect96', coords: "390,702,421,726"},
+  {id: 'rect97', coords: "344,702,375,726"},
+  {id: 'rect98', coords: "295,702,326,726"},
+  {id: 'rect99', coords: "248,702,277,726"},
+  {id: 'rect100', coords: "200,702,231,726"},
   
   {id: 'rect101', coords: "263,930,294,952"},
   {id: 'rect102', coords: "248,977,278,1000"},
@@ -149,8 +149,8 @@ numberPositions.forEach(pos => {
   rect.setAttribute('y', Math.min(y1, y2));
   rect.setAttribute('width', Math.abs(x2 - x1));
   rect.setAttribute('height', Math.abs(y2 - y1));
-  rect.setAttribute('fill', 'red'); 
-  rect.setAttribute('stroke', 'red');
+  rect.setAttribute('fill', '#FFFFFF'); 
+  rect.setAttribute('stroke', '#FFFFFF');
   rect.setAttribute('stroke-width', '2');
   svgElement.appendChild(rect);
 });
@@ -163,11 +163,16 @@ function updateRectColors() {
       Object.keys(data).forEach(key => {
         const rect = document.getElementById(key);
         if (rect) {
+          rect.setAttribute('mask', 'url(#rect-mask)'); 
           if (data[key] === 'off') {
-            rect.setAttribute('fill', 'green');
+            rect.setAttribute('fill', '#00FF00'); 
+            rect.setAttribute('stroke', 'black'); 
+            rect.setAttribute('stroke-width', '1');
             rect.setAttribute('filter', 'url(#glow)');
           } else {
-            rect.setAttribute('fill', 'red');
+            rect.setAttribute('fill', '#FF0000'); 
+            rect.setAttribute('stroke', 'black'); 
+            rect.setAttribute('stroke-width', '1');
             rect.removeAttribute('filter');
           }
         }
@@ -178,7 +183,7 @@ function updateRectColors() {
 
 
 // Update rect colors every 10 seconds
-setInterval(updateRectColors, 10000);
+setInterval(updateRectColors, 2000);
 
 
 // Thats it!
