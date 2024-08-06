@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG and Background Cover Example</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://jscolor.com/releases/2.4.5/jscolor.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <svg id="product-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1280">
+            <!-- Define the glow effect -->
+            <defs>
+                <filter id="glow" width="200%" height="200%" x="-50%" y="-50%">
+                    <feGaussianBlur stdDeviation="20" result="coloredBlur"/>
+                    <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+            
+        </svg>
+        <img id="background-image" src="seats.png" alt="">
+    </div>
+
+    <input class="jscolor {onInput:'changeColor(this)'}" value="DBED64">
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
