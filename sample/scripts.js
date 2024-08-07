@@ -167,30 +167,19 @@ function updateRectColors() {
           const id = parseInt(key);
           if (id >= 61 && id <= 109) {
             if (data[key] === 'off') {
-              rect.setAttribute('fill', '#FF00FF'); // 暗粉色
-              // rect.setAttribute('stroke', 'darkred'); 
-              // rect.setAttribute('stroke-width', '1');
-              // rect.setAttribute('filter', 'url(#glow)');
+              rect.setAttribute('fill', '#80477c'); // 暗粉色
+              rect.classList.remove('flowing-border');
             } else {
-              rect.setAttribute('fill', '#FF1493'); // 亮粉色
-              // rect.setAttribute('stroke', 'darkred'); 
-              // rect.setAttribute('stroke-width', '1');
-              // rect.removeAttribute('filter');
-              rect.classList.add('glow');
+              rect.setAttribute('fill', '#f702d6'); // 亮粉色
+              rect.classList.add('flowing-border', 'blue-glow');
             }
           } else {
             if (data[key] === 'off') {
               rect.setAttribute('fill', '#0000A0'); // 暗蓝色
-              // rect.setAttribute('stroke', 'black'); 
-              // rect.setAttribute('stroke-width', '1');
-              // rect.setAttribute('filter', 'url(#glow)');
-              
+              rect.classList.remove('flowing-border');
             } else {
               rect.setAttribute('fill', '#00BFFF'); // 亮蓝色
-              // rect.setAttribute('stroke', 'black'); 
-              // rect.setAttribute('stroke-width', '1');
-              // rect.removeAttribute('filter');
-              rect.classList.add('glow');
+              rect.classList.add('flowing-border','pink-glow');
             }
           }
         }

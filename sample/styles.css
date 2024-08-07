@@ -45,11 +45,88 @@ html {
 /* 发光特效 */
 .glow {
   stroke: yellow;
-  stroke-width: 5;
-  filter: drop-shadow(0 0 20px rgba(255, 255, 0, 0.8));
+  stroke-width: 4;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 0, 0.8));
   
 }
 
+@keyframes flowingBorder {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -20;
+  }
+}
 
+.flowing-border {
+  stroke: #00FFFF;
+  stroke-width: 2;
+  stroke-dasharray: 6 2;
+  animation: flowingBorder 1s linear infinite;
+}
 
+.glow {
+  filter: drop-shadow(0 0 5px #00FFFF);
+}
 
+@keyframes flowingBorder {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -30;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes rotateHue {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.flowing-border {
+  stroke-width: 3;
+  stroke-dasharray: 10 5;
+  animation: flowingBorder 2s linear infinite;
+}
+
+.glow {
+  filter: drop-shadow(0 0 5px currentColor);
+}
+
+.pulse {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.pink-glow {
+  stroke: #ff00ff;
+}
+
+.blue-glow {
+  stroke: #00ffff;
+}
+
+.rotating-hue {
+  animation: rotateHue 5s linear infinite;
+}
+
+.flowing-border.pink-glow {
+  filter: drop-shadow(0 0 5px #ff00ff) drop-shadow(0 0 10px #ff00ff);
+}
+
+.flowing-border.blue-glow {
+  filter: drop-shadow(0 0 5px #00ffff) drop-shadow(0 0 10px #00ffff);
+}
