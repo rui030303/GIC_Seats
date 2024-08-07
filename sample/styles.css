@@ -15,7 +15,6 @@ html {
 #container {
   height: 100%;
   width: 100%;
-
 }
 
 #product-svg {
@@ -31,7 +30,6 @@ html {
   fill: #DBED64;
 }
 
-
 .jscolor {
   position: fixed;
   bottom: 4em;
@@ -43,5 +41,15 @@ html {
   border-radius: 5px;
   cursor: pointer;
 }
+
+/* 发光特效 */
+.glow {
+  stroke: yellow;
+  stroke-width: 5;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 0, 0.8));
+  
+}
+
+
 
 
